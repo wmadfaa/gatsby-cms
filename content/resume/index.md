@@ -5,7 +5,9 @@ SEO:
 experience:
   title: All Companies
   subtitle: My Experience
+  timeline: experience
 education:
   title: Education
   subtitle: My Qualification
+  timeline: education
 ---

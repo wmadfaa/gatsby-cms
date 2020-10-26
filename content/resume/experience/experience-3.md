@@ -1,6 +1,5 @@
 ---
-template-key: experiences
-experience_id: experience-v89cqeOnQ
+data-key: experience
 company: Freelancing
 position: Freelancer React/React-Native Developer
 startDate: Nov 2019

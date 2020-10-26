@@ -1,6 +1,5 @@
 ---
-template-key: experiences
-experience_id: experience-udTUf2bj1
+data-key: experience
 company: Moonshiner GMBH Company/Vienna
 position: Frontend Developer
 startDate: Jun 2018

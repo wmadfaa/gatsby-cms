@@ -1,6 +1,5 @@
 ---
-template-key: experiences
-experience_id: experience-cz3ei9cMC
+data-key: experience
 company: TheVentury/Wien
 position: React Native Developer
 startDate: Jun 2020

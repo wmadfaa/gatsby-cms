@@ -1,6 +1,5 @@
 ---
-template-key: education
-education_id: education-mrouv4Vof
+data-key: education
 university: Stanford University
 degree: Master of Science
 startDate: Oct 2008

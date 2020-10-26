@@ -1,6 +1,5 @@
 ---
-template-key: education
-education_id: education-Jv9JYs9EN
+data-key: education
 university: Columbia University
 degree: Bachelor
 startDate: Oct 2005

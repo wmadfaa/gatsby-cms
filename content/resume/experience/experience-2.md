@@ -1,6 +1,5 @@
 ---
-template-key: experiences
-experience_id: experience-zOuK-UsKF
+data-key: experience
 company: Moodley Interactive/Graz
 position: React Native Developer
 startDate: Aug 2019
