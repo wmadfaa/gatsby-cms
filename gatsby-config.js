@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
@@ -58,6 +59,8 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-graphql-codegen`,
+    // `gatsby-plugin-codegen`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
