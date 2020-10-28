@@ -1,0 +1,32 @@
+.info-block {
+  @apply flex flex-col p-4 bg-white rounded-lg border border-gray-600 shadow-sm;
+  &.center {
+    @apply items-center;
+  }
+
+  @screen dark-mode {
+    @apply bg-gray-900 border-gray-400;
+  }
+}
+
+.icon {
+  @apply flex items-center justify-center w-10 h-10 text-gray-800 border border-gray-600 rounded-full mb-2;
+
+  @screen dark-mode {
+    @apply text-gray-200 border-gray-400;
+  }
+}
+
+.wrapper {
+  &.center {
+    @apply text-center;
+  }
+}
+
+.title {
+  @apply mt-1 font-semibold;
+}
+
+.content {
+  @apply mt-1;
+}

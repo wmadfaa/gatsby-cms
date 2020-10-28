@@ -700,13 +700,13 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___education___title'
   | 'childMarkdownRemark___frontmatter___education___subtitle'
   | 'childMarkdownRemark___frontmatter___title'
+  | 'childMarkdownRemark___frontmatter___template_key'
+  | 'childMarkdownRemark___frontmatter___SEO___title'
   | 'childMarkdownRemark___frontmatter___data_key'
   | 'childMarkdownRemark___frontmatter___company'
   | 'childMarkdownRemark___frontmatter___position'
   | 'childMarkdownRemark___frontmatter___startDate'
   | 'childMarkdownRemark___frontmatter___endDate'
-  | 'childMarkdownRemark___frontmatter___template_key'
-  | 'childMarkdownRemark___frontmatter___SEO___title'
   | 'childMarkdownRemark___frontmatter___university'
   | 'childMarkdownRemark___frontmatter___degree'
   | 'childMarkdownRemark___frontmatter___subtitle'
@@ -763,6 +763,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
+  | 'childMarkdownRemark___fields___slug'
   | 'childMarkdownRemark___html'
   | 'childMarkdownRemark___htmlAst'
   | 'childMarkdownRemark___excerptAst'
@@ -885,13 +886,13 @@ export type Frontmatter = {
   experience?: Maybe<MarkdownRemarkFrontmatterExperience>;
   education?: Maybe<MarkdownRemarkFrontmatterEducation>;
   title?: Maybe<Scalars['String']>;
+  template_key?: Maybe<Scalars['String']>;
+  SEO?: Maybe<MarkdownRemarkFrontmatterSeo>;
   data_key?: Maybe<Scalars['String']>;
   company?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   startDate?: Maybe<Scalars['String']>;
   endDate?: Maybe<Scalars['String']>;
-  template_key?: Maybe<Scalars['String']>;
-  SEO?: Maybe<MarkdownRemarkFrontmatterSeo>;
   university?: Maybe<Scalars['String']>;
   degree?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
@@ -917,13 +918,13 @@ export type FrontmatterFilterInput = {
   experience?: Maybe<MarkdownRemarkFrontmatterExperienceFilterInput>;
   education?: Maybe<MarkdownRemarkFrontmatterEducationFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  template_key?: Maybe<StringQueryOperatorInput>;
+  SEO?: Maybe<MarkdownRemarkFrontmatterSeoFilterInput>;
   data_key?: Maybe<StringQueryOperatorInput>;
   company?: Maybe<StringQueryOperatorInput>;
   position?: Maybe<StringQueryOperatorInput>;
   startDate?: Maybe<StringQueryOperatorInput>;
   endDate?: Maybe<StringQueryOperatorInput>;
-  template_key?: Maybe<StringQueryOperatorInput>;
-  SEO?: Maybe<MarkdownRemarkFrontmatterSeoFilterInput>;
   university?: Maybe<StringQueryOperatorInput>;
   degree?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
@@ -1512,6 +1513,7 @@ export type MarkdownRemark = Node & {
   excerpt?: Maybe<Scalars['String']>;
   rawMarkdownBody?: Maybe<Scalars['String']>;
   fileAbsolutePath?: Maybe<Scalars['String']>;
+  fields?: Maybe<MarkdownRemarkFields>;
   html?: Maybe<Scalars['String']>;
   htmlAst?: Maybe<Scalars['JSON']>;
   excerptAst?: Maybe<Scalars['JSON']>;
@@ -1577,6 +1579,10 @@ export type MarkdownRemarkEdge = {
   previous?: Maybe<MarkdownRemark>;
 };
 
+export type MarkdownRemarkFields = {
+  slug?: Maybe<Scalars['String']>;
+};
+
 export type MarkdownRemarkFieldsEnum = 
   | 'id'
   | 'frontmatter___experience___timeline'
@@ -1608,13 +1614,13 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___education___title'
   | 'frontmatter___education___subtitle'
   | 'frontmatter___title'
+  | 'frontmatter___template_key'
+  | 'frontmatter___SEO___title'
   | 'frontmatter___data_key'
   | 'frontmatter___company'
   | 'frontmatter___position'
   | 'frontmatter___startDate'
   | 'frontmatter___endDate'
-  | 'frontmatter___template_key'
-  | 'frontmatter___SEO___title'
   | 'frontmatter___university'
   | 'frontmatter___degree'
   | 'frontmatter___subtitle'
@@ -1699,6 +1705,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
+  | 'fields___slug'
   | 'html'
   | 'htmlAst'
   | 'excerptAst'
@@ -1797,12 +1804,17 @@ export type MarkdownRemarkFieldsEnum =
   | 'internal___owner'
   | 'internal___type';
 
+export type MarkdownRemarkFieldsFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>;
+};
+
 export type MarkdownRemarkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   frontmatter?: Maybe<FrontmatterFilterInput>;
   excerpt?: Maybe<StringQueryOperatorInput>;
   rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
   fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>;
   html?: Maybe<StringQueryOperatorInput>;
   htmlAst?: Maybe<JsonQueryOperatorInput>;
   excerptAst?: Maybe<JsonQueryOperatorInput>;
@@ -2106,6 +2118,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2176,6 +2190,7 @@ export type QueryMarkdownRemarkArgs = {
   excerpt?: Maybe<StringQueryOperatorInput>;
   rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
   fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
+  fields?: Maybe<MarkdownRemarkFieldsFilterInput>;
   html?: Maybe<StringQueryOperatorInput>;
   htmlAst?: Maybe<JsonQueryOperatorInput>;
   excerptAst?: Maybe<JsonQueryOperatorInput>;
@@ -2241,6 +2256,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2443,6 +2460,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2535,6 +2554,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2739,6 +2760,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___inlineCodeMarker'
+  | 'pluginCreator___pluginOptions___showLineNumbers'
   | 'pluginCreator___pluginOptions___staticFolderName'
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___destinationDir'
@@ -2947,6 +2970,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___id'
   | 'pluginOptions___plugins___name'
   | 'pluginOptions___plugins___version'
+  | 'pluginOptions___plugins___pluginOptions___inlineCodeMarker'
+  | 'pluginOptions___plugins___pluginOptions___showLineNumbers'
   | 'pluginOptions___plugins___pluginOptions___name'
   | 'pluginOptions___plugins___pluginOptions___staticFolderName'
   | 'pluginOptions___plugins___pluginOptions___maxWidth'
@@ -2956,6 +2981,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___pluginFilepath'
   | 'pluginOptions___path'
   | 'pluginOptions___name'
+  | 'pluginOptions___inlineCodeMarker'
+  | 'pluginOptions___showLineNumbers'
   | 'pluginOptions___staticFolderName'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___destinationDir'
@@ -3089,6 +3116,8 @@ export type SitePluginPluginOptions = {
   plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
+  inlineCodeMarker?: Maybe<Scalars['String']>;
+  showLineNumbers?: Maybe<Scalars['Boolean']>;
   staticFolderName?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
   destinationDir?: Maybe<Scalars['String']>;
@@ -3113,6 +3142,8 @@ export type SitePluginPluginOptionsFilterInput = {
   plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
+  inlineCodeMarker?: Maybe<StringQueryOperatorInput>;
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
   staticFolderName?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   destinationDir?: Maybe<StringQueryOperatorInput>;
@@ -3160,6 +3191,8 @@ export type SitePluginPluginOptionsPluginsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptions = {
+  inlineCodeMarker?: Maybe<Scalars['String']>;
+  showLineNumbers?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   staticFolderName?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
@@ -3167,6 +3200,8 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  inlineCodeMarker?: Maybe<StringQueryOperatorInput>;
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   staticFolderName?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
@@ -3251,6 +3286,16 @@ export type ResumePageQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<{ S
           & { frontmatter?: Maybe<Pick<Frontmatter, 'company' | 'position' | 'startDate' | 'endDate'>> }
         )>>> }
       )> }> }> };
+
+export type BlogPostBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type BlogPostBySlugQuery = { markdownRemark?: Maybe<(
+    Pick<MarkdownRemark, 'html'>
+    & { frontmatter?: Maybe<Pick<Frontmatter, 'title' | 'date'>> }
+  )> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

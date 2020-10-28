@@ -1,0 +1,23 @@
+.title-section {
+  @apply flex flex-col w-full;
+}
+
+.title {
+  @apply uppercase mb-4 text-lg font-bold w-full text-left;
+
+  &.center {
+    @apply text-center;
+  }
+}
+
+.subtitle {
+  @apply text-xs text-gray-600 w-full text-left;
+
+  &.center {
+    @apply text-center;
+  }
+
+  @screen dark-mode {
+    @apply text-gray-400;
+  }
+}

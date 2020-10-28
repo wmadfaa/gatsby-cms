@@ -1,0 +1,7 @@
+.contact-infos {
+  @apply grid grid-cols-1 gap-y-4 gap-x-3 w-full;
+
+  @screen sm {
+    @apply grid-cols-3;
+  }
+}
