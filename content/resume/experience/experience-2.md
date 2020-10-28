@@ -2,8 +2,8 @@
 data-key: experience
 company: Moodley Interactive/Graz
 position: React Native Developer
-startDate: Aug 2019
-endDate: Nov 2019
+startDate: 2019-07-31T22:00:00.000Z
+endDate: 2019-10-31T23:00:00.000Z
 ---
 
 * Built pixel-perfect, buttery smooth UIs across both mobile platforms.
