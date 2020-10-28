@@ -60,6 +60,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-graphql-codegen`,
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: false, // Print removed selectors and processed file names
+        develop: false, // Enable while using `gatsby develop`
+        tailwind: true, // Enable tailwindcss support
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-manifest`,
