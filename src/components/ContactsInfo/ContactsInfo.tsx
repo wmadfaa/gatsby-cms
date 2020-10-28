@@ -7,16 +7,10 @@ import { IconProps } from '../Base/Icon/Icon';
 
 import styles from './ContactsInfo.module.css';
 
-interface ContactInfoProps {
-  title: string;
-  content: string;
-  icon: IconProps;
-}
-
 export interface ContactsProps {
   title: string;
   subtitle: string;
-  contacts: ContactInfoProps[];
+  contacts: Array<{ title: string; content: string; icon: IconProps }>;
 }
 
 const ContactsInfo: React.FC<ContactsProps> = ({ title, subtitle, contacts }) => {

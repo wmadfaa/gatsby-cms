@@ -7,16 +7,10 @@ import { IconProps } from '../Base/Icon/Icon';
 
 import styles from './Services.module.css';
 
-interface Service {
-  title: string;
-  icon: IconProps;
-  description: string;
-}
-
 export interface ServicesProps {
   title: string;
   subtitle: string;
-  services: Service[];
+  services: Array<{ title: string; icon: IconProps; description: string }>;
 }
 
 const Services: React.FC<ServicesProps> = ({ title, subtitle, services }) => {

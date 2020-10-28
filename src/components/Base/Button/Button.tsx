@@ -7,7 +7,6 @@ import styles from './Button.module.css';
 interface Props {
   primary?: boolean;
   block?: boolean;
-  children: React.ReactNode;
 }
 
 const Button: React.FC<Props & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ primary, block, children }) => (
