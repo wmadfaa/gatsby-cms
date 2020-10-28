@@ -9,51 +9,58 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/img`,
-        name: 'uploads',
+        name: `uploads`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
-        name: 'content',
+        name: `content`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/images`,
-        name: 'images',
+        name: `images`,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-relative-images',
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              name: 'uploads',
+              inlineCodeMarker: `>`,
+              showLineNumbers: true,
             },
           },
           {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-relative-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
+              name: `uploads`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It`s important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 2048,
             },
           },
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              destinationDir: 'static',
+              destinationDir: `static`,
             },
           },
         ],
