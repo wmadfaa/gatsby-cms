@@ -1,11 +1,15 @@
 import { useStaticQuery, graphql } from 'gatsby';
+import { DeepNonNullable } from 'utility-types';
 import { BlogPageQuery } from '../../graphql-types';
 
 export function useBlogPageQuery() {
-  return useStaticQuery<BlogPageQuery>(graphql`
+  return useStaticQuery<DeepNonNullable<BlogPageQuery>>(graphql`
     query BlogPage {
       markdownRemark(frontmatter: { template_key: { eq: "blog-page" } }) {
         frontmatter {
+          SEO {
+            title
+          }
           title
           subtitle
         }
@@ -18,6 +22,9 @@ export function useBlogPageQuery() {
           node {
             id
             html
+            fields {
+              slug
+            }
             frontmatter {
               title
               description

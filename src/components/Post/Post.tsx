@@ -17,8 +17,8 @@ export interface PostProps {
   date: string;
   title: string;
   body: string;
-  prevLink: NavigationLinkProps;
-  nextLink: NavigationLinkProps;
+  prevLink: NavigationLinkProps | null;
+  nextLink: NavigationLinkProps | null;
   contentComponent?: React.ElementType<HTMLContentProps>;
 }
 

@@ -28,7 +28,7 @@ body {
 ```
 **NOTE**
 
-the styles inside `@media (prefers-color-scheme: light) {...}` will be applied if the user has notified the system that he prefers the light theme or if he has not expressed an active preference.
+the styles inside `css>@media (prefers-color-scheme: light) {...}` will be applied if the user has notified the system that he prefers the light theme or if he has not expressed an active preference.
 
 **TIP**
 

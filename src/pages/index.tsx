@@ -5,11 +5,13 @@ import AboutPageTemplate from '../templates/about-page';
 import useAboutPageQuery from '../graphql/about-page';
 
 const IndexPage: React.FC = () => {
-  const {} = useAboutPageQuery();
+  const { markdownRemark } = useAboutPageQuery();
+
+  const { SEO, heroBannerSection, servicesSection } = markdownRemark.frontmatter;
 
   return (
-    <Layout>
-      <AboutPageTemplate />;
+    <Layout seo={SEO}>
+      <AboutPageTemplate heroBannerSection={heroBannerSection} servicesSection={servicesSection} />;
     </Layout>
   );
 };

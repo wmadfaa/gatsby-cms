@@ -170,6 +170,13 @@ collections:
             widget: hidden
             default: blog-page
 
+          - label: SEO
+            name: SEO
+            widget: object
+            fields:
+              - label: title
+                name: title
+
           - label: title
             name: title
 

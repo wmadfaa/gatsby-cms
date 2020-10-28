@@ -47,7 +47,8 @@
     "@types/react-helmet": "^6.1.0",
     "prettier": "2.1.2",
     "tailwindcss": "^1.9.6",
-    "typescript-plugin-css-modules": "^2.7.0"
+    "typescript-plugin-css-modules": "^2.7.0",
+    "utility-types": "^3.10.0"
   },
   "keywords": [
     "gatsby"

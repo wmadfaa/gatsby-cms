@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const res = await graphql(`#graphql
     query {
       allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "blog" } } }
+        filter: { frontmatter: { template_key: { eq: "post" }, published: { eq: true } } }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {
