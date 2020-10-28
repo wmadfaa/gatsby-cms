@@ -60,7 +60,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-graphql-codegen`,
-    // `gatsby-plugin-codegen`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

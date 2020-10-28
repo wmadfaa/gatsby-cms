@@ -12,7 +12,7 @@ function useAboutPageQuery() {
           heroBannerSection {
             role
             greeting
-            aboutMe
+            bio
           }
           servicesSection {
             title
