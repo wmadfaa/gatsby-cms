@@ -2,7 +2,7 @@
 data-key: experience
 company: TheVentury/Wien
 position: React Native Developer
-startDate: 2020-05-31T22:00:00.000Z
+startDate: 2020-05-31
 endDate: Present (as freelancer)
 ---
 

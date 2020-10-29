@@ -1,4 +1,5 @@
 @tailwind base;
+@tailwind components;
 @tailwind screens;
 @tailwind utilities;
 
@@ -26,4 +27,10 @@ a {
 
 p + p {
   @apply mt-3;
+}
+
+.line-numbers-rows {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
 }

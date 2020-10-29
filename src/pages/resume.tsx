@@ -1,25 +1,24 @@
 import React from 'react';
+import { flatMap, sortBy } from 'lodash';
 import Layout from '../components/Layout/Layout';
 import { useResumePageQuery } from '../graphql/resume-page';
 import Experience from '../components/Experience/Experience';
 import Education from '../components/Education/Education';
-
-import { map, orderBy } from 'lodash';
 
 const ResumePage: React.FC = () => {
   const { markdownRemark } = useResumePageQuery();
 
   const { SEO, experience, education } = markdownRemark.frontmatter;
 
-  const experiences = orderBy(
-    map(experience.timeline, ({ html, frontmatter }) => ({ body: html, ...frontmatter })),
-    ['startDate'],
-  );
+  const experiences = sortBy(
+    flatMap(experience.timeline, ({ html, frontmatter }) => ({ body: html, ...frontmatter })),
+    ({ startDate }) => new Date(startDate).getTime(),
+  ).reverse();
 
-  const educations = orderBy(
-    map(education.timeline, ({ html, frontmatter }) => ({ body: html, ...frontmatter })),
-    ['startDate'],
-  );
+  const educations = sortBy(
+    flatMap(education.timeline, ({ html, frontmatter }) => ({ body: html, ...frontmatter })),
+    ({ startDate }) => new Date(startDate).getTime(),
+  ).reverse();
 
   return (
     <Layout seo={SEO}>

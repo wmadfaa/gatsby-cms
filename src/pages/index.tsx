@@ -11,7 +11,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <Layout seo={SEO}>
-      <AboutPageTemplate heroBannerSection={heroBannerSection} servicesSection={servicesSection} />;
+      <AboutPageTemplate heroBannerSection={heroBannerSection} servicesSection={servicesSection} />
     </Layout>
   );
 };

@@ -2,8 +2,8 @@
 data-key: experience
 company: Freelancing
 position: Freelancer React/React-Native Developer
-startDate: 2019-10-31T23:00:00.000Z
-endDate: 2020-05-31T22:00:00.000Z
+startDate: 2019-10-31
+endDate: 2020-05-31
 ---
 
 * Designing, developing, and testing UI for mobile and web applications.

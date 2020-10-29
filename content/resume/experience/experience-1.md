@@ -2,8 +2,8 @@
 data-key: experience
 company: Moonshiner GMBH Company/Vienna
 position: Frontend Developer
-startDate: 2018-05-31T22:00:00.000Z
-endDate: 2019-07-31T22:00:00.000Z
+startDate: 2018-05-31
+endDate: 2019-07-31
 ---
 
 * Developed new user-facing features
