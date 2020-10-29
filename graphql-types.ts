@@ -700,13 +700,13 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___education___title'
   | 'childMarkdownRemark___frontmatter___education___subtitle'
   | 'childMarkdownRemark___frontmatter___title'
-  | 'childMarkdownRemark___frontmatter___template_key'
-  | 'childMarkdownRemark___frontmatter___SEO___title'
   | 'childMarkdownRemark___frontmatter___data_key'
   | 'childMarkdownRemark___frontmatter___company'
   | 'childMarkdownRemark___frontmatter___position'
   | 'childMarkdownRemark___frontmatter___startDate'
   | 'childMarkdownRemark___frontmatter___endDate'
+  | 'childMarkdownRemark___frontmatter___template_key'
+  | 'childMarkdownRemark___frontmatter___SEO___title'
   | 'childMarkdownRemark___frontmatter___university'
   | 'childMarkdownRemark___frontmatter___degree'
   | 'childMarkdownRemark___frontmatter___subtitle'
@@ -714,12 +714,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___contacts___title'
   | 'childMarkdownRemark___frontmatter___contacts___icon'
   | 'childMarkdownRemark___frontmatter___contacts___content'
-  | 'childMarkdownRemark___frontmatter___heroBannerSection___role'
-  | 'childMarkdownRemark___frontmatter___heroBannerSection___greeting'
-  | 'childMarkdownRemark___frontmatter___heroBannerSection___bio'
-  | 'childMarkdownRemark___frontmatter___servicesSection___title'
-  | 'childMarkdownRemark___frontmatter___servicesSection___subtitle'
-  | 'childMarkdownRemark___frontmatter___servicesSection___services'
   | 'childMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childMarkdownRemark___frontmatter___cover___relativePath'
@@ -760,6 +754,12 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___frontmatter___published'
+  | 'childMarkdownRemark___frontmatter___heroBannerSection___role'
+  | 'childMarkdownRemark___frontmatter___heroBannerSection___greeting'
+  | 'childMarkdownRemark___frontmatter___heroBannerSection___bio'
+  | 'childMarkdownRemark___frontmatter___servicesSection___title'
+  | 'childMarkdownRemark___frontmatter___servicesSection___subtitle'
+  | 'childMarkdownRemark___frontmatter___servicesSection___services'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -886,24 +886,24 @@ export type Frontmatter = {
   experience?: Maybe<MarkdownRemarkFrontmatterExperience>;
   education?: Maybe<MarkdownRemarkFrontmatterEducation>;
   title?: Maybe<Scalars['String']>;
-  template_key?: Maybe<Scalars['String']>;
-  SEO?: Maybe<MarkdownRemarkFrontmatterSeo>;
   data_key?: Maybe<Scalars['String']>;
   company?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   startDate?: Maybe<Scalars['String']>;
   endDate?: Maybe<Scalars['String']>;
+  template_key?: Maybe<Scalars['String']>;
+  SEO?: Maybe<MarkdownRemarkFrontmatterSeo>;
   university?: Maybe<Scalars['String']>;
   degree?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   contacts?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterContacts>>>;
-  heroBannerSection?: Maybe<MarkdownRemarkFrontmatterHeroBannerSection>;
-  servicesSection?: Maybe<MarkdownRemarkFrontmatterServicesSection>;
   cover?: Maybe<File>;
   description?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   published?: Maybe<Scalars['Boolean']>;
+  heroBannerSection?: Maybe<MarkdownRemarkFrontmatterHeroBannerSection>;
+  servicesSection?: Maybe<MarkdownRemarkFrontmatterServicesSection>;
 };
 
 
@@ -918,24 +918,24 @@ export type FrontmatterFilterInput = {
   experience?: Maybe<MarkdownRemarkFrontmatterExperienceFilterInput>;
   education?: Maybe<MarkdownRemarkFrontmatterEducationFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
-  template_key?: Maybe<StringQueryOperatorInput>;
-  SEO?: Maybe<MarkdownRemarkFrontmatterSeoFilterInput>;
   data_key?: Maybe<StringQueryOperatorInput>;
   company?: Maybe<StringQueryOperatorInput>;
   position?: Maybe<StringQueryOperatorInput>;
   startDate?: Maybe<StringQueryOperatorInput>;
   endDate?: Maybe<StringQueryOperatorInput>;
+  template_key?: Maybe<StringQueryOperatorInput>;
+  SEO?: Maybe<MarkdownRemarkFrontmatterSeoFilterInput>;
   university?: Maybe<StringQueryOperatorInput>;
   degree?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
   contacts?: Maybe<MarkdownRemarkFrontmatterContactsFilterListInput>;
-  heroBannerSection?: Maybe<MarkdownRemarkFrontmatterHeroBannerSectionFilterInput>;
-  servicesSection?: Maybe<MarkdownRemarkFrontmatterServicesSectionFilterInput>;
   cover?: Maybe<FileFilterInput>;
   description?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
   published?: Maybe<BooleanQueryOperatorInput>;
+  heroBannerSection?: Maybe<MarkdownRemarkFrontmatterHeroBannerSectionFilterInput>;
+  servicesSection?: Maybe<MarkdownRemarkFrontmatterServicesSectionFilterInput>;
 };
 
 export type ImageCropFocus = 
@@ -1614,13 +1614,13 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___education___title'
   | 'frontmatter___education___subtitle'
   | 'frontmatter___title'
-  | 'frontmatter___template_key'
-  | 'frontmatter___SEO___title'
   | 'frontmatter___data_key'
   | 'frontmatter___company'
   | 'frontmatter___position'
   | 'frontmatter___startDate'
   | 'frontmatter___endDate'
+  | 'frontmatter___template_key'
+  | 'frontmatter___SEO___title'
   | 'frontmatter___university'
   | 'frontmatter___degree'
   | 'frontmatter___subtitle'
@@ -1628,15 +1628,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___contacts___title'
   | 'frontmatter___contacts___icon'
   | 'frontmatter___contacts___content'
-  | 'frontmatter___heroBannerSection___role'
-  | 'frontmatter___heroBannerSection___greeting'
-  | 'frontmatter___heroBannerSection___bio'
-  | 'frontmatter___servicesSection___title'
-  | 'frontmatter___servicesSection___subtitle'
-  | 'frontmatter___servicesSection___services'
-  | 'frontmatter___servicesSection___services___title'
-  | 'frontmatter___servicesSection___services___icon'
-  | 'frontmatter___servicesSection___services___description'
   | 'frontmatter___cover___sourceInstanceName'
   | 'frontmatter___cover___absolutePath'
   | 'frontmatter___cover___relativePath'
@@ -1702,6 +1693,15 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___date'
   | 'frontmatter___tags'
   | 'frontmatter___published'
+  | 'frontmatter___heroBannerSection___role'
+  | 'frontmatter___heroBannerSection___greeting'
+  | 'frontmatter___heroBannerSection___bio'
+  | 'frontmatter___servicesSection___title'
+  | 'frontmatter___servicesSection___subtitle'
+  | 'frontmatter___servicesSection___services'
+  | 'frontmatter___servicesSection___services___title'
+  | 'frontmatter___servicesSection___services___icon'
+  | 'frontmatter___servicesSection___services___description'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -2783,6 +2783,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___legacy'
   | 'pluginCreator___pluginOptions___theme_color_in_head'
   | 'pluginCreator___pluginOptions___cacheDigest'
+  | 'pluginCreator___pluginOptions___analyzerPort'
+  | 'pluginCreator___pluginOptions___production'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -3006,6 +3008,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___legacy'
   | 'pluginOptions___theme_color_in_head'
   | 'pluginOptions___cacheDigest'
+  | 'pluginOptions___analyzerPort'
+  | 'pluginOptions___production'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3142,6 +3146,8 @@ export type SitePluginPluginOptions = {
   legacy?: Maybe<Scalars['Boolean']>;
   theme_color_in_head?: Maybe<Scalars['Boolean']>;
   cacheDigest?: Maybe<Scalars['String']>;
+  analyzerPort?: Maybe<Scalars['Int']>;
+  production?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -3169,6 +3175,8 @@ export type SitePluginPluginOptionsFilterInput = {
   legacy?: Maybe<BooleanQueryOperatorInput>;
   theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
+  analyzerPort?: Maybe<IntQueryOperatorInput>;
+  production?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
