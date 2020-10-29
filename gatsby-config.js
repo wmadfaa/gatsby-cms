@@ -72,8 +72,9 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: false, // Print removed selectors and processed file names
-        develop: false, // Enable while using `gatsby develop`
+        develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
+        purgeOnly: [`src/styles/tailwind.css`],
       },
     },
     `gatsby-plugin-netlify-cms`,
