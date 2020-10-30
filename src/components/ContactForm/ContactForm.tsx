@@ -8,6 +8,7 @@ import Button from '../Base/Button/Button';
 import OptionsInput from '../Base/OptionsInput/OptionsInput';
 
 import styles from './ContactForm.module.css';
+import useNotification from '../Base/Notification/useNotification';
 
 export interface ContactFormProps {
   title: string;
@@ -29,6 +30,7 @@ const encode = (data: ContactFormInputs & { 'form-name': string }) => {
 };
 
 const ContactForm: React.FC<ContactFormProps> = ({ title, subtitle }) => {
+  const notify = useNotification();
   const { register, handleSubmit, errors, control } = useForm<ContactFormInputs>();
 
   const handleOnSubmit = (data: ContactFormInputs) => {
@@ -37,8 +39,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ title, subtitle }) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...data }),
     })
-      .then(() => alert('Success!'))
-      .catch((error) => alert(error));
+      .then(() => {
+        notify(
+          {
+            status: 'success',
+            title: 'Your request has been received',
+            message: 'I will respond to you as soon as possible.',
+          },
+          3000,
+        );
+      })
+      .catch(() => {
+        notify({ status: 'error', title: 'Ops! something went wrong', message: 'please try again' }, 3000);
+      });
   };
 
   return (
@@ -80,10 +93,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ title, subtitle }) => {
               type="tel"
               ref={register({
                 required: 'Enter your Phone Number',
-                pattern: {
-                  value: /^\+[0-9]{1,3}\.[0-9]{4,14}(?:x.+)?$/,
-                  message: 'Enter a valid phone number <+43 660 6805176>',
-                },
               })}
             />
           </div>
