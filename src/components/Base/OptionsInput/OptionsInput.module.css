@@ -1,0 +1,19 @@
+.root {
+  @apply w-full;
+}
+
+.label {
+  @apply block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase;
+
+  @screen dark-mode {
+    @apply text-gray-300;
+  }
+}
+
+.options {
+  @apply grid grid-flow-row gap-4;
+
+  @screen sm {
+    @apply grid-flow-col;
+  }
+}
