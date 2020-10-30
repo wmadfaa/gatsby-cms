@@ -3,7 +3,11 @@ import Option from './Option/Option';
 
 import styles from './OptionsInput.module.css';
 
-export interface OptionsInputProps {}
+export interface OptionsInputProps {
+  value: string;
+  onChange(value: string): void;
+  error?: string;
+}
 
 const options = [
   { value: 'implementation', title: 'Implementation', icon: 'laptop-code' },
@@ -12,11 +16,12 @@ const options = [
   { value: 'support', title: 'Technical Support', icon: 'headset' },
 ];
 
-const OptionsInput: React.FC<OptionsInputProps> = () => {
-  const [activeValue, setActiveValue] = useState<string>('');
+const OptionsInput: React.FC<OptionsInputProps> = ({ value, onChange, error }) => {
+  const [activeValue, setActiveValue] = useState<string>(value);
 
-  const handleOnChange = (value: string, evt: React.ChangeEvent<HTMLInputElement>) => {
-    setActiveValue(value);
+  const handleOnChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setActiveValue(evt.target.value);
+    onChange(evt.target.value);
   };
 
   return (
@@ -28,6 +33,7 @@ const OptionsInput: React.FC<OptionsInputProps> = () => {
         ))}
         <Option onChange={handleOnChange} value="other" title="other" active={activeValue === 'other'} />
       </div>
+      {error && <p className={styles.errMsg}>{error}</p>}
     </fieldset>
   );
 };

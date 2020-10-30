@@ -700,13 +700,13 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___education___title'
   | 'childMarkdownRemark___frontmatter___education___subtitle'
   | 'childMarkdownRemark___frontmatter___title'
+  | 'childMarkdownRemark___frontmatter___template_key'
+  | 'childMarkdownRemark___frontmatter___SEO___title'
   | 'childMarkdownRemark___frontmatter___data_key'
   | 'childMarkdownRemark___frontmatter___company'
   | 'childMarkdownRemark___frontmatter___position'
   | 'childMarkdownRemark___frontmatter___startDate'
   | 'childMarkdownRemark___frontmatter___endDate'
-  | 'childMarkdownRemark___frontmatter___template_key'
-  | 'childMarkdownRemark___frontmatter___SEO___title'
   | 'childMarkdownRemark___frontmatter___university'
   | 'childMarkdownRemark___frontmatter___degree'
   | 'childMarkdownRemark___frontmatter___subtitle'
@@ -886,13 +886,13 @@ export type Frontmatter = {
   experience?: Maybe<MarkdownRemarkFrontmatterExperience>;
   education?: Maybe<MarkdownRemarkFrontmatterEducation>;
   title?: Maybe<Scalars['String']>;
+  template_key?: Maybe<Scalars['String']>;
+  SEO?: Maybe<MarkdownRemarkFrontmatterSeo>;
   data_key?: Maybe<Scalars['String']>;
   company?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   startDate?: Maybe<Scalars['String']>;
   endDate?: Maybe<Scalars['String']>;
-  template_key?: Maybe<Scalars['String']>;
-  SEO?: Maybe<MarkdownRemarkFrontmatterSeo>;
   university?: Maybe<Scalars['String']>;
   degree?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
@@ -918,13 +918,13 @@ export type FrontmatterFilterInput = {
   experience?: Maybe<MarkdownRemarkFrontmatterExperienceFilterInput>;
   education?: Maybe<MarkdownRemarkFrontmatterEducationFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  template_key?: Maybe<StringQueryOperatorInput>;
+  SEO?: Maybe<MarkdownRemarkFrontmatterSeoFilterInput>;
   data_key?: Maybe<StringQueryOperatorInput>;
   company?: Maybe<StringQueryOperatorInput>;
   position?: Maybe<StringQueryOperatorInput>;
   startDate?: Maybe<StringQueryOperatorInput>;
   endDate?: Maybe<StringQueryOperatorInput>;
-  template_key?: Maybe<StringQueryOperatorInput>;
-  SEO?: Maybe<MarkdownRemarkFrontmatterSeoFilterInput>;
   university?: Maybe<StringQueryOperatorInput>;
   degree?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
@@ -1614,13 +1614,13 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___education___title'
   | 'frontmatter___education___subtitle'
   | 'frontmatter___title'
+  | 'frontmatter___template_key'
+  | 'frontmatter___SEO___title'
   | 'frontmatter___data_key'
   | 'frontmatter___company'
   | 'frontmatter___position'
   | 'frontmatter___startDate'
   | 'frontmatter___endDate'
-  | 'frontmatter___template_key'
-  | 'frontmatter___SEO___title'
   | 'frontmatter___university'
   | 'frontmatter___degree'
   | 'frontmatter___subtitle'

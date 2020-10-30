@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import styles from './Textarea.module.css';
 
@@ -8,16 +8,16 @@ export interface TextareaProps extends React.HTMLProps<HTMLTextAreaElement> {
   error?: string;
 }
 
-const Textarea: React.FC<TextareaProps> = ({ id, label, error, ...inputProps }) => {
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ id, label, error, ...inputProps }, ref) => {
   return (
     <div className={styles.root}>
       <label className={styles.label} htmlFor={id}>
         {label}
       </label>
-      <textarea id={id} className={styles.input} {...inputProps} />
+      <textarea ref={ref} id={id} name={id} className={styles.input} {...inputProps} />
       {error && <p className={styles.errMsg}>{error}</p>}
     </div>
   );
-};
+});
 
 export default Textarea;

@@ -11,14 +11,10 @@ export interface OptionProps {
   title: string;
   icon?: string | IconProps;
   active?: boolean;
-  onChange(value: string, evt: React.ChangeEvent<HTMLInputElement>): void;
+  onChange(evt: React.ChangeEvent<HTMLInputElement>): void;
 }
 
 const Option: React.FC<OptionProps> = ({ onChange, value, title, icon, active }) => {
-  const handleOnChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(value, evt);
-  };
-
   return (
     <motion.label
       className={classnames(styles.option, { [styles.active]: active })}
@@ -28,7 +24,7 @@ const Option: React.FC<OptionProps> = ({ onChange, value, title, icon, active })
       {icon && <Icon icon={icon as IconProps} />}
       {` `}
       {title}
-      <input onChange={handleOnChange} type="radio" className={styles.input} value={value} checked={false} />
+      <input onChange={onChange} type="radio" className={styles.input} value={value} checked={false} />
     </motion.label>
   );
 };
