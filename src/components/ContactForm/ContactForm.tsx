@@ -22,11 +22,23 @@ interface ContactFormInputs {
   service: string;
 }
 
+const encode = (data: ContactFormInputs & { 'form-name': string }) => {
+  return Object.entries(data)
+    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+    .join('&');
+};
+
 const ContactForm: React.FC<ContactFormProps> = ({ title, subtitle }) => {
   const { register, handleSubmit, errors, control } = useForm<ContactFormInputs>();
 
   const handleOnSubmit = (data: ContactFormInputs) => {
-    console.log(data);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...data }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
   };
 
   return (
